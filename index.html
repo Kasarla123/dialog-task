@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive Dialog Box</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: blue;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            color: black;
+        }
+
+        .openDialog {
+            display: none;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 500px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+      
+        .openDialog button {
+            
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .openDialog button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <button  id="openButton" onclick="openDialog()">Open Dialogue</button>
+    <div class="openDialog" id="dialog">
+        <h1>Enter Something</h1>
+        <input type="text" id="inputField">
+        <button onclick="submitDialog()">Submit</button>
+    </div>
+
+    <script>
+        function openDialog() {
+            document.getElementById('dialog').style.display = 'block';
+
+            document.getElementById('openButton').style.display = 'none';
+        }
+
+        function submitDialog() {
+            var val = document.getElementById('inputField').value;
+            if (val !== "") {
+                alert("You Entered: " + val);
+            } else {
+                alert("Please enter something before submitting.");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
